@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4S Aqua Care – RO Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: #111; background: #fff; font-size: 15px; line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid #e8ecf0;
+    padding: 0 40px;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-icon {
+    width: 36px; height: 36px; background: #0ea5e9;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo-icon svg { width: 22px; height: 22px; fill: #fff; }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .nav-logo-text strong { font-size: 14px; font-weight: 800; color: #111; letter-spacing: -0.3px; }
+  .nav-logo-text span { font-size: 10px; color: #64748b; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: #374151; font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: #0ea5e9; }
+  .nav-cta {
+    background: #0ea5e9; color: #fff; border: none; padding: 10px 20px;
+    border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: #0284c7; }
+
+  /* HERO */
+  .hero {
+    padding: 80px 40px 60px;
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #f0f9ff; color: #0ea5e9; font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;
+    border: 1px solid #bae6fd;
+  }
+  .hero-badge::before { content: '✓'; font-size: 11px; }
+  .hero h1 {
+    font-size: 52px; font-weight: 900; line-height: 1.05; letter-spacing: -2px;
+    color: #0f172a; margin-bottom: 18px;
+  }
+  .hero-desc { color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+  .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .btn-primary {
+    background: #0ea5e9; color: #fff; border: none; padding: 13px 24px;
+    border-radius: 9px; font-size: 14px; font-weight: 700; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  }
+  .btn-primary:hover { background: #0284c7; }
+  .btn-outline {
+    background: #fff; color: #374151; border: 1.5px solid #d1d5db;
+    padding: 12px 22px; border-radius: 9px; font-size: 14px; font-weight: 600;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  }
+  .btn-outline:hover { border-color: #0ea5e9; color: #0ea5e9; }
+  .hero-phone {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 10px 16px; font-size: 15px; font-weight: 700; color: #0f172a;
+  }
+  .hero-phone-icon { color: #0ea5e9; font-size: 18px; }
+  .hero-phone small { display: block; font-size: 11px; color: #64748b; font-weight: 400; }
+  .hero-img-wrap { position: relative; }
+  .hero-img {
+    width: 100%; border-radius: 16px; object-fit: cover; height: 360px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: #e2e8f0; border-radius: 12px; overflow: hidden; margin-top: 16px;
+  }
+  .hero-stat {
+    background: #fff; padding: 14px 16px; text-align: center;
+  }
+  .hero-stat strong { display: block; font-size: 14px; font-weight: 800; color: #0f172a; }
+  .hero-stat span { font-size: 11px; color: #64748b; }
+
+  /* SECTION COMMONS */
+  section { padding: 80px 40px; }
+  .container { max-width: 1160px; margin: 0 auto; }
+  .eyebrow { font-size: 12px; font-weight: 700; color: #0ea5e9; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-size: 38px; font-weight: 900; letter-spacing: -1.5px; color: #0f172a; line-height: 1.1; margin-bottom: 14px; }
+  .section-sub { font-size: 15px; color: #64748b; max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+
+  /* ABOUT */
+  .about { background: #fff; }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-img {
+    border-radius: 14px; overflow: hidden; height: 340px;
+    background: #f1f5f9;
+  }
+  .about-img img { width: 100%; height: 100%; object-fit: cover; }
+  .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+  .about-feature {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13.5px; font-weight: 600; color: #374151;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px;
+  }
+  .about-feature .icon { color: #0ea5e9; font-size: 15px; }
+
+  /* SERVICES */
+  .services { background: #f8fafc; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .service-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px 20px;
+  }
+  .service-card .s-icon { font-size: 22px; color: #0ea5e9; margin-bottom: 12px; }
+  .service-card h3 { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 8px; line-height: 1.3; }
+  .service-card p { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+  /* PRODUCTS */
+  .products { background: #fff; }
+  .products-grid-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .products-main-img {
+    border-radius: 14px; overflow: hidden; height: 280px; background: #e0f2fe;
+    position: relative;
+  }
+  .products-main-img img { width: 100%; height: 100%; object-fit: cover; }
+  .img-label {
+    position: absolute; bottom: 14px; left: 14px;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(6px);
+    border-radius: 10px; padding: 10px 14px; font-size: 13px;
+    font-weight: 700; color: #0f172a; max-width: 220px;
+  }
+  .img-label small { display: block; font-size: 11px; font-weight: 400; color: #64748b; margin-top: 2px; }
+  .products-right { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .product-card {
+    display: flex; align-items: center; gap: 14px;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;
+    padding: 16px 18px; font-size: 13.5px; font-weight: 700; color: #0f172a;
+  }
+  .product-card .p-icon { color: #0ea5e9; font-size: 18px; }
+
+  /* WHY US */
+  .why { background: #0f172a; color: #fff; }
+  .why .section-title { color: #fff; }
+  .why .eyebrow { color: #38bdf8; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .why-item {
+    background: #1e293b; border: 1px solid #334155; border-radius: 12px;
+    padding: 18px 16px; display: flex; align-items: center; gap: 10px;
+    font-size: 13.5px; font-weight: 600; color: #e2e8f0;
+  }
+  .why-item .w-icon { font-size: 18px; color: #38bdf8; }
+
+  /* PROCESS */
+  .process { background: #fff; }
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .process-step { position: relative; }
+  .step-num { font-size: 28px; font-weight: 900; color: #bae6fd; margin-bottom: 8px; }
+  .process-step h3 { font-size: 14.5px; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
+  .process-step p { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+  /* SERVICE AREAS */
+  .areas {
+    background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 60%, #06b6d4 100%);
+    border-radius: 20px; padding: 40px 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+    max-width: 1160px; margin: 0 auto 0;
+  }
+  .areas-left { }
+  .areas .eyebrow { color: rgba(255,255,255,0.75); }
+  .areas h2 { font-size: 34px; font-weight: 900; color: #fff; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 14px; }
+  .areas p { color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.7; }
+  .areas-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .area-tag {
+    background: rgba(255,255,255,0.15); color: #fff; font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.25);
+  }
+  .areas-section { padding: 80px 40px; }
+
+  /* CONTACT */
+  .contact { background: #fff; }
+  .contact-intro { text-align: center; margin-bottom: 48px; }
+  .contact-intro .section-sub { margin: 0 auto; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .contact-info {
+    background: #0f172a; border-radius: 16px; padding: 40px 36px; color: #fff;
+  }
+  .contact-info h3 { font-size: 22px; font-weight: 900; margin-bottom: 6px; }
+  .contact-info .addr { font-size: 13px; color: #94a3b8; margin-bottom: 28px; line-height: 1.5; }
+  .contact-phone-box {
+    background: #1e293b; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px;
+  }
+  .contact-phone-box .label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .contact-phone-box .number { font-size: 20px; font-weight: 900; color: #38bdf8; }
+  .contact-btns { display: flex; gap: 10px; margin-bottom: 28px; }
+  .btn-teal {
+    background: #0d9488; color: #fff; border: none; padding: 11px 18px;
+    border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+  }
+  .btn-green {
+    background: #16a34a; color: #fff; border: none; padding: 11px 18px;
+    border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+  }
+  .map-placeholder {
+    background: #1e293b; border-radius: 12px; padding: 32px 20px;
+    text-align: center; color: #64748b; border: 2px dashed #334155;
+  }
+  .map-placeholder .map-icon { font-size: 28px; margin-bottom: 10px; color: #475569; }
+  .map-placeholder h4 { font-size: 14px; font-weight: 700; color: #94a3b8; margin-bottom: 6px; }
+  .map-placeholder p { font-size: 12px; line-height: 1.5; }
+
+  .contact-form {
+    background: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 40px 36px;
+  }
+  .contact-form h3 { font-size: 20px; font-weight: 900; color: #0f172a; margin-bottom: 6px; }
+  .contact-form .form-sub { font-size: 13px; color: #64748b; margin-bottom: 24px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 14px; border: 1.5px solid #d1d5db; border-radius: 9px;
+    font-size: 14px; font-family: inherit; color: #0f172a; outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #0ea5e9; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #94a3b8; }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .form-group select { appearance: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 12px center; }
+  .btn-submit {
+    width: 100%; background: #0ea5e9; color: #fff; border: none;
+    padding: 14px; border-radius: 9px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: inherit;
+  }
+  .btn-submit:hover { background: #0284c7; }
+
+  /* FOOTER */
+  footer {
+    background: #0f172a; color: #e2e8f0; padding: 60px 40px 28px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr 1.5fr; gap: 40px; margin-bottom: 48px; max-width: 1160px; margin-left: auto; margin-right: auto; }
+  .footer-brand p { font-size: 13px; color: #64748b; line-height: 1.7; margin: 12px 0 16px; }
+  .footer-socials { display: flex; gap: 12px; }
+  .footer-socials a {
+    width: 34px; height: 34px; background: #1e293b; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #94a3b8; font-size: 15px; text-decoration: none;
+  }
+  .footer-socials a:hover { background: #0ea5e9; color: #fff; }
+  .footer-col h4 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: 0.3px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-col ul li a { font-size: 13px; color: #64748b; text-decoration: none; }
+  .footer-col ul li a:hover { color: #38bdf8; }
+  .footer-col .contact-detail { font-size: 13px; color: #64748b; line-height: 1.7; }
+  .footer-bottom {
+    border-top: 1px solid #1e293b; padding-top: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1160px; margin: 0 auto;
+  }
+  .footer-bottom p { font-size: 12px; color: #475569; }
+
+  /* UTILS */
+  .text-center { text-align: center; }
+  .process-section { padding: 80px 40px; }
+  
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 40px 20px; }
+    .about-inner, .products-grid-wrap, .contact-grid, .areas { grid-template-columns: 1fr; }
+    .services-grid, .why-grid, .process-steps { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 56px 20px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .areas { padding: 32px 24px; }
+    .hero h1 { font-size: 38px; }
+    .section-title { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+    </div>
+    <div class="nav-logo-text">
+      <strong>4S Aqua Care</strong>
+      <span>RO Solutions</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="tel:+919750222207">📞 +91 97502 222207</a>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px;margin:0 auto;padding:0 40px;">
+  <div class="hero" style="padding:80px 0 60px;max-width:100%;">
+    <div class="hero-left">
+      <div class="hero-badge">Trusted RO service in Chidambaram</div>
+      <h1>Pure Water.<br>Better Health.<br>Better Life.</h1>
+      <p class="hero-desc">Providing reliable RO water purifier sales, installation, repair, maintenance, and water treatment solutions for homes, businesses, and industries in Chidambaram and surrounding areas.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:+919750222207">📞 Call Now</a>
+        <a class="btn-outline" href="#contact">✦ Get a Free Quote</a>
+      </div>
+      <div class="hero-phone">
+        <span class="hero-phone-icon">📱</span>
+        <div>
+          <small>Speak with 4S Aqua Care</small>
+          <strong>+91 97502 222207</strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Modern kitchen with RO purifier" onerror="this.style.display='none'">
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>Homes</strong>
+          <span>Offices · Schools · Hotels</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Fast</strong>
+          <span>Doorstep RO support</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Genuine</strong>
+          <span>Filters and membranes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=600&q=80" alt="RO Installation technician" onerror="this.parentElement.style.background='#e0f2fe'">
+      </div>
+      <div>
+        <div class="eyebrow">About 4S Aqua Care</div>
+        <h2 class="section-title">Clean water solutions from a trusted local RO specialist.</h2>
+        <p style="color:#475569;font-size:15px;line-height:1.7;margin-bottom:4px;">4S Aqua Care specializes in delivering safe and clean drinking water solutions through quality RO systems, expert installation, timely maintenance, and dependable customer support. We serve homes, offices, schools, hospitals, restaurants, and industries across Chidambaram and nearby areas.</p>
+        <div class="about-features">
+          <div class="about-feature"><span class="icon">✓</span> Quality RO products</div>
+          <div class="about-feature"><span class="icon">🔧</span> Expert installation</div>
+          <div class="about-feature"><span class="icon">🚗</span> Prompt doorstep service</div>
+          <div class="about-feature"><span class="icon">🛡</span> Dependable support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="text-center">
+      <div class="eyebrow">Our Services</div>
+      <h2 class="section-title">Complete RO and water<br>treatment support for every need.</h2>
+      <p class="section-sub" style="margin:0 auto 48px;">From domestic purifiers to commercial and industrial systems, 4S Aqua Care helps you choose, install, maintain, and repair the right water solution.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="s-icon">🏠</div>
+        <h3>Domestic RO Water Purifiers</h3>
+        <p>Reliable drinking water systems for apartments, houses, and family use.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🏢</div>
+        <h3>Commercial RO Systems</h3>
+        <p>RO capacity planning and service for offices, schools, restaurants, and clinics.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🏭</div>
+        <h3>Industrial Water Treatment</h3>
+        <p>Scalable water treatment support for process, utility, and facility requirements.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🔩</div>
+        <h3>RO Installation</h3>
+        <p>Professional setup with proper fitment, testing, and usage guidance.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🔧</div>
+        <h3>RO Repair & Maintenance</h3>
+        <p>Troubleshooting for low flow, taste, leakage, pump, filter, and membrane issues.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">📋</div>
+        <h3>AMC Contracts</h3>
+        <p>Scheduled service plans to keep your purifier performing throughout the year.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🔬</div>
+        <h3>Filter & Membrane Replacement</h3>
+        <p>Genuine filters and membranes selected for your water quality and system type.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">💧</div>
+        <h3>Water Quality Testing</h3>
+        <p>Assess water condition so you can choose the right treatment solution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="text-center">
+      <div class="eyebrow">Our Products</div>
+      <h2 class="section-title">Purification systems and parts<br>for homes and businesses.</h2>
+    </div>
+    <div class="products-grid-wrap" style="margin-top:40px;">
+      <div class="products-main-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Domestic RO Systems" onerror="this.parentElement.style.background='#e0f2fe'">
+        <div class="img-label">
+          Domestic RO Systems
+          <small>Compact, efficient purification for daily drinking water.</small>
+        </div>
+      </div>
+      <div class="products-right">
+        <div class="product-card"><span class="p-icon">🏭</span> Commercial RO Plants</div>
+        <div class="product-card"><span class="p-icon">🏭</span> Industrial RO Systems</div>
+        <div class="product-card"><span class="p-icon">💧</span> Water Softeners</div>
+        <div class="product-card"><span class="p-icon">🛡</span> UV & UF Water Purifiers</div>
+        <div class="product-card"><span class="p-icon">🔬</span> RO Filters & Membranes</div>
+        <div class="product-card"><span class="p-icon">🔩</span> RO Spare Parts & Accessories</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <div class="eyebrow">Why Choose 4S Aqua Care</div>
+    <h2 class="section-title" style="margin-bottom:40px;">A local team built around dependable<br>service and clean workmanship.</h2>
+    <div class="why-grid">
+      <div class="why-item"><span class="w-icon">👷</span> Experienced Technicians</div>
+      <div class="why-item"><span class="w-icon">✓</span> Genuine Spare Parts</div>
+      <div class="why-item"><span class="w-icon">💰</span> Affordable Pricing</div>
+      <div class="why-item"><span class="w-icon">🚗</span> Fast Doorstep Service</div>
+      <div class="why-item"><span class="w-icon">⭐</span> High-Quality Products</div>
+      <div class="why-item"><span class="w-icon">🔧</span> Professional Installation</div>
+      <div class="why-item"><span class="w-icon">🎧</span> Reliable Customer Support</div>
+      <div class="why-item"><span class="w-icon">🏡</span> Trusted Local Business</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <div class="text-center">
+      <div class="eyebrow">Our Process</div>
+      <h2 class="section-title">From first call to long-term<br>maintenance, everything stays simple.</h2>
+    </div>
+    <div class="process-steps" style="margin-top:48px;">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Contact Us</h3>
+        <p>Call or request a quote with your purifier or water requirement.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>Water Assessment</h3>
+        <p>We check your water and usage needs before recommending a solution.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>Installation</h3>
+        <p>Technicians install, test, and explain the system clearly.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>Service & Maintenance</h3>
+        <p>Scheduled filter changes, AMC, and repair support keep water safe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<div class="areas-section">
+  <div class="areas">
+    <div class="areas-left">
+      <div class="eyebrow">Service Areas</div>
+      <h2>RO service coverage across Chidambaram and nearby towns.</h2>
+      <p>Serving Chidambaram, Bhuvanagiri, Parangipettai, Cuddalore, Neyveli, Sirkazhi, nearby towns, and surrounding villages.</p>
+    </div>
+    <div class="areas-tags">
+      <span class="area-tag">Chidambaram</span>
+      <span class="area-tag">Bhuvanagiri</span>
+      <span class="area-tag">Parangipettai</span>
+      <span class="area-tag">Cuddalore</span>
+      <span class="area-tag">Neyveli</span>
+      <span class="area-tag">Sirkazhi</span>
+      <span class="area-tag">Nearby towns & villages</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-intro text-center">
+      <div class="eyebrow">Contact 4S Aqua Care</div>
+      <h2 class="section-title">Need RO service or a new<br>purifier? Let's help today.</h2>
+      <p class="section-sub">Call directly for urgent service, send a WhatsApp message, or request a quote through the form.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>4S Aqua Care</h3>
+        <p class="addr">Bhuvanagiri Main Road, B. Mutur, Chidambaram, Tamil Nadu – 608501</p>
+        <div class="contact-phone-box">
+          <div class="label">Phone</div>
+          <div class="number">+91 97502 222207</div>
+        </div>
+        <div class="contact-btns">
+          <a class="btn-teal" href="tel:+919750222207">📞 Click to Call</a>
+          <a class="btn-green" href="https://wa.me/919750222207" target="_blank">💬 WhatsApp</a>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-icon">📍</div>
+          <h4>Google Maps Embed Placeholder</h4>
+          <p>Add the live map embed for Bhuvanagiri Main Road, B. Mutur, Chidambaram.</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Request a Free Quote</h3>
+        <p class="form-sub">Share your requirement and the team will contact you for purifier sales, installation, repair, AMC, or water testing.</p>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="Mobile number">
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select>
+            <option>RO Installation</option>
+            <option>RO Repair & Maintenance</option>
+            <option>AMC Contract</option>
+            <option>Filter & Membrane Replacement</option>
+            <option>Water Quality Testing</option>
+            <option>New Purifier Purchase</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your water purifier or project requirement"></textarea>
+        </div>
+        <button class="btn-submit">Request a Quote</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <div class="nav-logo-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div>
+        <span style="font-size:16px;font-weight:800;color:#fff;">4S Aqua Care</span>
+      </div>
+      <p>Premium RO water purifier sales, installation, repair, AMC, and water treatment support in Chidambaram.</p>
+      <div class="footer-socials">
+        <a href="#">W</a>
+        <a href="#">f</a>
+        <a href="#">📷</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">RO Installation</a></li>
+        <li><a href="#">RO Repair & Maintenance</a></li>
+        <li><a href="#">AMC Contracts</a></li>
+        <li><a href="#">Water Quality Testing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Details</h4>
+      <p class="contact-detail">
+        Bhuvanagiri Main Road, B. Mutur,<br>
+        Chidambaram, Tamil Nadu – 608501<br><br>
+        +91 97502 222207<br><br>
+        Business Hours: Mon–Sat, 9:00 AM – 7:00 PM
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2026 4S Aqua Care. All Rights Reserved.</p>
+    <p style="color:#475569;">RO Water Purifier Chidambaram</p>
+  </div>
+</footer>
+
+</body>
+</html>
