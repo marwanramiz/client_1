@@ -215,6 +215,26 @@
   .product-card:hover { border-color: #0ea5e9; background: #f0f9ff; }
   .product-card .p-icon { color: #0ea5e9; font-size: 18px; }
 
+  /* ── PRODUCT IMAGE GRID ── */
+  .products-img-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .prod-img-slot {
+    aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;
+    background: #f0f9ff; border: 1.5px solid #e2e8f0;
+    position: relative; display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .prod-img-slot:hover { border-color: #0ea5e9; box-shadow: 0 8px 24px rgba(14,165,233,0.12); }
+  .prod-img-slot img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;
+  }
+  .prod-img-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: #94a3b8; font-size: 28px; z-index: 0;
+  }
+  .prod-img-placeholder span { font-size: 11px; font-weight: 600; color: #cbd5e1; letter-spacing: 0.3px; }
+
   /* ── WHY US ── */
   .why { background: #0f172a; color: #fff; }
   .why .section-title { color: #fff; }
@@ -405,7 +425,7 @@
     <li><a href="#products">Products</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="tel:+919750222207">📞 +91 97502 22207</a>
+  <a class="nav-cta" href="tel:+919750222207">📞 +91 97502 222207</a>
 </nav>
 
 <!-- HERO -->
@@ -423,15 +443,13 @@
         <span class="hero-phone-icon">📱</span>
         <div>
           <small>Speak with 4S Aqua Care</small>
-          <strong>+91 97502 22207</strong>
+          <strong>+91 97502 222207</strong>
         </div>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-img reveal from-right">
-  <!--HEAD-->
-         <img src="images/outsidephto.jpeg" alt="Outside client photo">
-
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Modern kitchen RO purifier" onerror="this.style.display='none'">
       </div>
       <div class="hero-stats reveal reveal-delay-2">
         <div class="hero-stat"><strong>Homes</strong><span>Offices · Schools · Hotels</span></div>
@@ -480,8 +498,7 @@
   <div class="container">
     <div class="about-inner">
       <div class="about-img reveal from-left">
-	<img src="images/insidephto.jpeg" alt="Outside client photo">
-
+        <img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=600&q=80" alt="RO Installation" onerror="this.parentElement.style.background='#e0f2fe'">
       </div>
       <div>
         <div class="eyebrow reveal">About 4S Aqua Care</div>
@@ -527,9 +544,23 @@
       <h2 class="section-title reveal reveal-delay-1">Purification systems and parts<br>for homes and businesses.</h2>
     </div>
     <div class="products-grid-wrap" style="margin-top:44px;">
-      <div class="products-main-img reveal from-left">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Domestic RO Systems" onerror="this.parentElement.style.background='#e0f2fe'">
-        <div class="img-label">Domestic RO Systems<small>Compact, efficient purification for daily drinking water.</small></div>
+      <div class="products-img-grid reveal from-left">
+        <div class="prod-img-slot">
+          <img src="images/product1.jpeg" alt="Product 1" onerror="this.style.display='none'">
+          <div class="prod-img-placeholder">📷<span>Product Photo</span></div>
+        </div>
+        <div class="prod-img-slot">
+          <img src="images/product2.jpeg" alt="Product 2" onerror="this.style.display='none'">
+          <div class="prod-img-placeholder">📷<span>Product Photo</span></div>
+        </div>
+        <div class="prod-img-slot">
+          <img src="images/product3.jpeg" alt="Product 3" onerror="this.style.display='none'">
+          <div class="prod-img-placeholder">📷<span>Product Photo</span></div>
+        </div>
+        <div class="prod-img-slot">
+          <img src="images/product4.jpeg" alt="Product 4" onerror="this.style.display='none'">
+          <div class="prod-img-placeholder">📷<span>Product Photo</span></div>
+        </div>
       </div>
       <div class="products-right">
         <div class="product-card reveal reveal-delay-1"><span class="p-icon">🏭</span> Commercial RO Plants</div>
@@ -611,58 +642,41 @@
       <div class="contact-info reveal from-left">
         <h3>4S Aqua Care</h3>
         <p class="addr">Bhuvanagiri Main Road, B. Mutur, Chidambaram, Tamil Nadu – 608501</p>
-        <div class="contact-phone-box"><div class="label">Phone</div><div class="number">+91 97502 22207</div></div>
+        <div class="contact-phone-box"><div class="label">Phone</div><div class="number">+91 97502 222207</div></div>
         <div class="contact-btns">
           <a class="btn-teal" href="tel:+919750222207">📞 Click to Call</a>
           <a class="btn-green" href="https://wa.me/919750222207" target="_blank">💬 WhatsApp</a>
         </div>
         <div class="map-placeholder">
           <div class="map-icon">📍</div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1041.155220862496!2d79.70512396402955!3d11.463804912293197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54c1f7b32e6c83%3A0x62450bf3a2b96f88!2s4S%20AQUA%20CARE%20sales%20%26%20services!5e0!3m2!1sen!2sin!4v1782542515672!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Google Maps Embed Placeholder</h4>
+          <p>Add the live map embed for Bhuvanagiri Main Road, B. Mutur, Chidambaram.</p>
         </div>
       </div>
-      <form action="https://formsubmit.co/marwanramizm77%40gmail.com" method="POST" class="contact-form reveal from-right">
-
-  
-  <!-- Disable CAPTCHA -->
-  <input type="hidden" name="_captcha" value="false">
-
-  <!-- Redirect after submit -->
-  <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
-
-  <h3>Request a Free Quote</h3>
-  <p class="form-sub">Share your requirement and the team will contact you for purifier sales, installation, repair, AMC, or water testing.</p>
-
-  <div class="form-group">
-    <label>Name</label>
-    <input type="text" name="name" placeholder="Your name" required>
-  </div>
-
-  <div class="form-group">
-    <label>Phone</label>
-    <input type="tel" name="phone" placeholder="Mobile number" required>
-  </div>
-
-  <div class="form-group">
-    <label>Service Needed</label>
-    <select name="service" required>
-      <option>RO Installation</option>
-      <option>RO Repair & Maintenance</option>
-      <option>AMC Contract</option>
-      <option>Filter & Membrane Replacement</option>
-      <option>Water Quality Testing</option>
-      <option>New Purifier Purchase</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label>Message</label>
-    <textarea name="message" placeholder="Tell us about your water purifier or project requirement"></textarea>
-  </div>
-
-  <button class="btn-submit" type="submit">Request a Quote</button>
-</form>
-
+      <div class="contact-form reveal from-right">
+        <h3>Request a Free Quote</h3>
+        <p class="form-sub">Share your requirement and the team will contact you for purifier sales, installation, repair, AMC, or water testing.</p>
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Mobile number"></div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Water purifier service</option>
+            <option>AMC Maintenance</option>
+            <option>OEM Spares Available</option>
+            <option>Kangen water</option>
+            <option>Aquaguard service</option>
+            <option>Kent service</option>
+            <option>Livpure service</option>
+            <option>Pureit service</option>
+            <option>Ao Smith service</option>
+            <option>All documents &amp; commercial plant also available</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your water purifier or project requirement"></textarea></div>
+        <button class="btn-submit">Request a Quote</button>
+      </div>
     </div>
   </div>
 </section>
