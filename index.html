@@ -341,10 +341,11 @@
     margin-bottom: 44px;
   }
   .footer-brand p { font-size: 13px; color: #64748b; line-height: 1.75; margin: 14px 0 18px; }
-  .footer-socials { display: flex; gap: 10px; }
+  .footer-socials { display: flex; gap: 8px; flex-wrap: wrap; }
   .footer-socials a {
-    width: 36px; height: 36px; background: #1e293b; border-radius: 9px;
-    display: flex; align-items: center; justify-content: center;
+    min-width: 36px; height: 36px; background: #1e293b; border-radius: 9px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 0 8px;
     color: #94a3b8; font-size: 15px; text-decoration: none; font-weight: 700;
     transition: background 0.2s, color 0.2s;
   }
@@ -393,25 +394,23 @@
   <a class="nav-logo" href="#">
     <!-- LOGO MARK: water drop with 4S -->
     <div class="logo-mark">
-      <svg viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#0ea5e9"/>
-            <stop offset="100%" style="stop-color:#0369a1"/>
-          </linearGradient>
-          <linearGradient id="shineGrad" x1="0%" y1="0%" x2="60%" y2="100%">
-            <stop offset="0%" style="stop-color:#fff;stop-opacity:0.35"/>
-            <stop offset="100%" style="stop-color:#fff;stop-opacity:0"/>
-          </linearGradient>
-        </defs>
-        <!-- Drop shape -->
-        <path d="M21 3 C21 3 7 17 7 25.5 C7 33.5 13.3 39 21 39 C28.7 39 35 33.5 35 25.5 C35 17 21 3 21 3Z" fill="url(#dropGrad)"/>
-        <!-- Shine overlay -->
-        <path d="M21 3 C21 3 7 17 7 25.5 C7 33.5 13.3 39 21 39 C28.7 39 35 33.5 35 25.5 C35 17 21 3 21 3Z" fill="url(#shineGrad)"/>
-        <!-- Inner shine bubble -->
-        <ellipse cx="15.5" cy="21" rx="3.5" ry="5" fill="rgba(255,255,255,0.28)" transform="rotate(-20 15.5 21)"/>
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+        <!-- Dark navy circle background -->
+        <circle cx="30" cy="30" r="29" fill="#1a237e" stroke="#1565c0" stroke-width="1.5"/>
+        <!-- Water ripple arc left -->
+        <path d="M10 38 Q15 28 22 32 Q17 36 10 38Z" fill="#1565c0" opacity="0.7"/>
+        <!-- Water ripple arc right -->
+        <path d="M50 38 Q45 28 38 32 Q43 36 50 38Z" fill="#1565c0" opacity="0.7"/>
+        <!-- Two hand/water drop shapes -->
+        <path d="M22 42 Q18 30 24 22 Q27 18 30 16 Q33 18 36 22 Q42 30 38 42 Q34 46 30 47 Q26 46 22 42Z" fill="#0d47a1"/>
+        <!-- Inner lighter water shape -->
+        <path d="M25 40 Q22 32 26 25 Q28 21 30 20 Q32 21 34 25 Q38 32 35 40 Q32 44 30 44 Q28 44 25 40Z" fill="#1976d2"/>
+        <!-- White highlight on drop -->
+        <ellipse cx="27" cy="28" rx="2.5" ry="4" fill="rgba(255,255,255,0.25)" transform="rotate(-15 27 28)"/>
         <!-- 4S text -->
-        <text x="21" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="12" fill="#fff" letter-spacing="-0.5">4S</text>
+        <text x="30" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="11" fill="#fff" letter-spacing="0">4s</text>
+        <!-- Aqua care text at bottom of circle -->
+        <text x="30" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="5.5" fill="#90caf9" letter-spacing="0.3">Aqua care</text>
       </svg>
     </div>
     <div class="nav-logo-text">
@@ -610,6 +609,83 @@
 
 
 
+
+<!-- CERTIFICATIONS -->
+<section style="background:#f8fafc;padding:64px 48px;">
+  <div class="container">
+    <div class="text-center">
+      <div class="eyebrow reveal">Trust & Compliance</div>
+      <h2 class="section-title reveal reveal-delay-1">Certified. Registered.<br>Trusted by hundreds.</h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin:0 auto 48px;">4S Aqua Care operates with full compliance and certification — giving you complete confidence in our products and services.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px;margin:0 auto;" class="reveal reveal-delay-2">
+      <!-- ISO Certificate slot -->
+      <div style="background:#fff;border:2px dashed #bae6fd;border-radius:18px;padding:28px 24px;text-align:center;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.boxShadow='0 8px 28px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd';this.style.boxShadow='none'">
+        <div style="width:100%;aspect-ratio:4/3;background:#f0f9ff;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;position:relative;">
+          <img src="images/iso-certificate.jpg" alt="ISO Certificate" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onerror="this.style.display='none'">
+          <div style="z-index:1;text-align:center;">
+            <div style="font-size:32px;margin-bottom:6px;">🏆</div>
+            <div style="font-size:11px;font-weight:700;color:#0ea5e9;letter-spacing:1px;">ADD CERTIFICATE IMAGE</div>
+            <div style="font-size:10px;color:#94a3b8;margin-top:4px;">iso-certificate.jpg</div>
+          </div>
+        </div>
+        <div style="font-size:15px;font-weight:900;color:#0f172a;margin-bottom:4px;">ISO Water Certificate</div>
+        <div style="font-size:12px;color:#64748b;line-height:1.5;">Internationally certified water quality standards for safe, pure drinking water.</div>
+      </div>
+      <!-- Udyam Registration slot -->
+      <div style="background:#fff;border:2px dashed #bbf7d0;border-radius:18px;padding:28px 24px;text-align:center;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#16a34a';this.style.boxShadow='0 8px 28px rgba(22,163,74,0.12)'" onmouseout="this.style.borderColor='#bbf7d0';this.style.boxShadow='none'">
+        <div style="width:100%;aspect-ratio:4/3;background:#f0fdf4;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;position:relative;">
+          <img src="images/udyam-certificate.jpg" alt="Udyam Registration" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onerror="this.style.display='none'">
+          <div style="z-index:1;text-align:center;">
+            <div style="font-size:32px;margin-bottom:6px;">📜</div>
+            <div style="font-size:11px;font-weight:700;color:#16a34a;letter-spacing:1px;">ADD CERTIFICATE IMAGE</div>
+            <div style="font-size:10px;color:#94a3b8;margin-top:4px;">udyam-certificate.jpg</div>
+          </div>
+        </div>
+        <div style="font-size:15px;font-weight:900;color:#0f172a;margin-bottom:4px;">Udyam Registration</div>
+        <div style="font-size:12px;color:#64748b;line-height:1.5;">Officially registered MSME under Government of India's Udyam portal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS WE SERVICE -->
+<section style="background:#fff;padding:64px 48px;">
+  <div class="container">
+    <div class="text-center">
+      <div class="eyebrow reveal">All Brands, One Stop</div>
+      <h2 class="section-title reveal reveal-delay-1">All types of water purifiers<br>available here.</h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin:0 auto 48px;">Retailer &amp; service center for all major brands — RO + UV + UF + MTDS Adjuster + Mineral Cartridge</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;" class="reveal reveal-delay-2">
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Kent maxx low TDS</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Clean water</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Clear water</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Neptune</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Dolphin</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Dolphin gold +</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Water Lilly</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Water leexy</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua touch</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua grand</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua thunder</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua Emerald</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua pearl</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua mars</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua Jude</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Aqua view</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Sevenx</div>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:700;color:#0f172a;text-align:center;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='#0ea5e9';this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">Wall mount &amp; ext.</div>
+      <div style="background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:12px;padding:14px 16px;font-size:13px;font-weight:800;color:#fff;text-align:center;grid-column:span 2;">🌟 And many more brands available — call us!</div>
+    </div>
+    <div style="text-align:center;margin-top:28px;" class="reveal reveal-delay-3">
+      <p style="font-size:14px;color:#475569;margin-bottom:14px;">Contact us directly for availability and pricing</p>
+      <a href="tel:+919750222207" class="btn-primary" style="display:inline-flex;margin-right:10px;">📞 97502 22207</a>
+      <a href="tel:+919751521551" class="btn-outline" style="display:inline-flex;">📞 97515 21551</a>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICE AREAS -->
 <div class="areas-section">
   <div class="areas reveal scale-up">
@@ -627,6 +703,7 @@
       <span class="area-tag">Sirkazhi</span>
       <span class="area-tag">Nearby towns & villages</span>
     </div>
+    <p style="margin-top:18px;color:rgba(255,255,255,0.7);font-size:13px;font-style:italic;letter-spacing:0.3px;">🚗 Water purifier service available under 70 km</p>
   </div>
 </div>
 
@@ -699,9 +776,19 @@
       </div>
       <p>Premium RO water purifier sales, installation, repair, AMC, and water treatment support in Chidambaram.</p>
       <div class="footer-socials">
-        <a href="#">W</a>
-        <a href="#">f</a>
-        <a href="#">📷</a>
+        <a href="https://wa.me/919750222207" target="_blank" title="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span style="font-size:10px;display:block;margin-top:2px;">97502 22207</span>
+        </a>
+        <a href="https://www.linkedin.com/in/4s-aqua-care-25824224a" target="_blank" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/4s_aqua_care" target="_blank" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wap.justdial.com/edit-list/chidambaram/4s-Aqua-Care/9999P4144-4144-220827163725-L7U3" target="_blank" title="JustDial" style="font-size:11px;font-weight:900;color:#ff6b00;">JD</a>
+        <a href="https://www.knowyourgst.com/gst-number-search/4s-aqua-care-33IEYPS6288Q1ZT/" target="_blank" title="GST Verified" style="font-size:10px;font-weight:900;color:#16a34a;">GST</a>
+        <a href="https://tradvo.com/business/4s-Aqua-care-63d7ecc9872c34186a021e76" target="_blank" title="Tradvo" style="font-size:10px;font-weight:900;color:#7c3aed;">TV</a>
       </div>
     </div>
     <div class="footer-col reveal reveal-delay-1">
@@ -724,7 +811,7 @@
     </div>
     <div class="footer-col reveal reveal-delay-3">
       <h4>Contact Details</h4>
-      <p class="contact-detail">Bhuvanagiri Main Road, B. Mutur,<br>Chidambaram, Tamil Nadu – 608501<br><br>+91 97502 222207<br><br>Business Hours: Mon–Sat, 9:00 AM – 7:00 PM</p>
+      <p class="contact-detail">Bhuvanagiri Main Road, B. Mutur,<br>Chidambaram, Tamil Nadu – 608501<br><br>+91 97502 22207 | +91 97515 21551<br><br>Business Hours: Mon–Sat, 9:00 AM – 7:00 PM</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -756,6 +843,25 @@
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
   });
+</script>
+
+<script>
+function sendToWhatsApp(e) {
+  e.preventDefault();
+  const form = document.getElementById('waForm');
+  const name = form.querySelector('[name="name"]').value || '';
+  const phone = form.querySelector('[name="phone"]').value || '';
+  const service = form.querySelector('[name="service"]').value || '';
+  const message = form.querySelector('[name="message"]').value || '';
+  const text = encodeURIComponent(
+    "🌊 *4S Aqua Care – Quote Request*\n\n" +
+    "👤 *Name:* " + name + "\n" +
+    "📱 *Phone:* " + phone + "\n" +
+    "🔧 *Service Needed:* " + service + "\n" +
+    "💬 *Message:* " + message
+  );
+  window.open("https://wa.me/919750222207?text=" + text, "_blank");
+}
 </script>
 </body>
 </html>
