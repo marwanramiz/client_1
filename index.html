@@ -723,30 +723,42 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.2194592027668!2d79.70597959999999!3d11.4640794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54c1f7b32e6c83%3A0x62450bf3a2b96f88!2s4S%20AQUA%20CARE%20sales%20%26%20services!5e0!3m2!1sen!2sin!4v1782580566393!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
-      <div class="contact-form reveal from-right">
-        <h3>Request a Free Quote</h3>
-        <p class="form-sub">Share your requirement and the team will contact you for purifier sales, installation, repair, AMC, or water testing.</p>
-        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Mobile number"></div>
-        <div class="form-group">
-          <label>Service Needed</label>
-          <select>
-            <option value="">Select a service...</option>
-            <option>Water purifier service</option>
-            <option>AMC Maintenance</option>
-            <option>OEM Spares Available</option>
-            <option>Kangen water</option>
-            <option>Aquaguard service</option>
-            <option>Kent service</option>
-            <option>Livpure service</option>
-            <option>Pureit service</option>
-            <option>Ao Smith service</option>
-            <option>All documents &amp; commercial plant also available</option>
-          </select>
-        </div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your water purifier or project requirement"></textarea></div>
-        <button class="btn-submit">Request a Quote</button>
-      </div>
+<div class="contact-form reveal from-right">
+  <h3>Request a Free Quote</h3>
+  <p class="form-sub">Share your requirement and the team will contact you for purifier sales, installation, repair, AMC, or water testing.</p>
+
+  <form id="waForm" onsubmit="sendToWhatsApp(event)">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your name" required>
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" name="phone" placeholder="Mobile number" required>
+    </div>
+    <div class="form-group">
+      <label>Service Needed</label>
+      <select name="service" required>
+        <option value="">Select a service...</option>
+        <option>Water purifier service</option>
+        <option>AMC Maintenance</option>
+        <option>OEM Spares Available</option>
+        <option>Kangen water</option>
+        <option>Aquaguard service</option>
+        <option>Kent service</option>
+        <option>Livpure service</option>
+        <option>Pureit service</option>
+        <option>Ao Smith service</option>
+        <option>All documents &amp; commercial plant also available</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea name="message" placeholder="Tell us about your water purifier or project requirement"></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Request a Quote</button>
+  </form>
+</div>
     </div>
   </div>
 </section>
