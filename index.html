@@ -777,7 +777,6 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
     <div class="footer-brand reveal">
       <div style="display:flex;align-items:center;gap:11px;margin-bottom:6px;">
         <svg width="36" height="36" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
@@ -844,8 +843,8 @@
 
 
     <!-- Quick Links -->
-    <div class="footer-col reveal reveal-delay-1">
-      <h4>Quick Links</h4>
+    <div class="footer-grid">
+       <div class="footer-col">Quick Links…</div>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -855,8 +854,8 @@
     </div>
 
     <!-- Services -->
-    <div class="footer-col reveal reveal-delay-2">
-      <h4>Services</h4>
+    
+      <div class="footer-col">Services…</div>
       <ul>
         <li><a href="#">Raw water testing lab report</a></li>
         <li><a href="#">RO Installation</a></li>
@@ -867,8 +866,8 @@
     </div>
 
     <!-- Contact -->
-    <div class="footer-col reveal reveal-delay-3">
-      <h4>Contact Details</h4>
+   
+      <div class="footer-col">Contact Details</div>
       <p class="contact-detail">
         Bhuvanagiri Main Road, B. Mutur,<br>
         Chidambaram, Tamil Nadu – 608501<br><br>
@@ -931,15 +930,5 @@ function sendToWhatsApp(e) {
 </html>
 
 
-.footer-grid {
-  display: flex;
-  justify-content: space-between; /* spreads columns evenly */
-  align-items: flex-start;        /* aligns them at the top */
-  gap: 20px;                      /* spacing between columns */
-}
 
-.footer-col {
-  flex: 1;                        /* makes each column equal width */
-  min-width: 200px;               /* prevents them from shrinking too small */
-}
  
